@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Binary Search</title>
+<script type="text/javascript">
+
+// Take Array of Sorted Elements
+var myList = [1, 3, 5, 7, 9, 12, 15, 18, 20]; 
+function binarySearch(myList, itemToFind) {
+
+    var low = 0, high = myList.length - 1,  mid, Key;
+   
+    while(low <= high) {
+        mid = Math.floor((low + high) / 2),
+        Key = myList[mid];
+
+        if(Key === itemToFind) {
+            document.write('Found item at index: ' + mid + ', value is ' + Key);
+            return true;
+        }
+
+        if(itemToFind < Key){ 
+          high = mid - 1; 
+      	} 
+        else {    
+        	low = mid + 1;    
+        }
+    }
+    
+    return null;
+}
+
+var item = binarySearch(myList, 15);
+if(!item) {
+    document.write('Key does not exist!');
+}
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
